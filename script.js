@@ -37,11 +37,9 @@ function game(){
     let computerScore = 0;
     let roundWinner;
 
-    for(let i = 0; i < 5; i++){
-
         let playerSelection = prompt("Enter either Rock, Paper or Scissors?").toLowerCase();
         console.log(`Player picked ${playerSelection}`);  //debug
-        
+
         roundWinner = playRound(playerSelection, computerPlay());     
 
         if(roundWinner === 1){
@@ -49,7 +47,7 @@ function game(){
         }else if(roundWinner === 0){
             computerScore += 1;
         }
-    }
+    
    console.log(`Game Over: PlayScore = ${playerScore} and ComputerScore = ${computerScore}`);
    
 }
