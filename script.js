@@ -28,29 +28,55 @@ function playRound(playerSelection, computerSelection){
         console.log(`You Lose ${computerSelection} beats ${playerSelection}`);
         return 0;  
     }
-
-}
-
-function game(){
-
-    let playerScore = 0;
-    let computerScore = 0;
-    let roundWinner;
-
-        let playerSelection = prompt("Enter either Rock, Paper or Scissors?").toLowerCase();
-        console.log(`Player picked ${playerSelection}`);  //debug
-
-        roundWinner = playRound(playerSelection, computerPlay());     
-
-        if(roundWinner === 1){
-            playerScore += 1;
-        }else if(roundWinner === 0){
-            computerScore += 1;
-        }
-    
-   console.log(`Game Over: PlayScore = ${playerScore} and ComputerScore = ${computerScore}`);
-   
 }
 
 
-game();
+const result = document.querySelector('#result');
+const playerScoreContainer = document.querySelector('#playerScore');
+const computerScoreContainer = document.querySelector('#computerScore');
+const btns = document.querySelectorAll('button');
+const playerChoice = document.querySelector('#playerChoice');
+const computerChoice = document.querySelector('#computerChoice');
+let computerPick;
+let winner;
+let playerScore = 0;
+let computerScore = 0;
+
+//Each time user makes a pick kick off the game..
+btns.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        
+        
+        //Get the Computers Pick
+        computerPick = computerPlay();
+       
+        // Display the Player and Computer pick on UI
+        playerChoice.textContent = playerChoice.textContent + ` ${button.value}`;
+        computerChoice.textContent = computerChoice.textContent + ` ${computerPick}`;
+        
+        //Play a round
+        winner = playRound(button.value, computerPick);
+        console.log(winner);
+        updateScore(winner)
+    });
+});
+
+
+
+function updateScore(roundWinner){
+
+    if(roundWinner === 1){
+        playerScore += 1;
+        playerScoreContainer.textContent = `Player: ${playerScore}`;
+        result.classList.remove('failure');
+        result.classList.add('success');
+        
+                
+    }else if(roundWinner === 0){
+        computerScore += 1;
+        computerScoreContainer.textContent = `Computer: ${computerScore}`;
+        result.classList.remove('success');
+        result.classList.add('failure');
+    }
+}
