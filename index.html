@@ -5,29 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
 
+    
+
     <div class="content">
 
-        <div class="item">Nav Bar</div>
-        <div class="item">
+        <div class="flex-item left">
+    
+            <div class="left-content">
             
-            <div id="scoreBox">
-
-                <div class="subtitle">Lets play!</div>
-                <h1>Paper Scissors Rock!</h1>
-
+              <div class="scoreBoard">
+                <div id="computerScore">Computer: 0</div>
+                <div id="playerScore">Player: 0</div>
+              </div>
+              
+              <div class="playButtons">
+        
+                <img src="rock.svg" id="btn-rock" alt="rock"/>
+                <img src="paper.svg" id='btn-paper' alt="paper"/>
+                <img src="scissors.svg" id='btn-scissors' alt="scissors"/>
+                
+              </div>
+              
+              <div class="gameInfo">
+                <div id="playerChoice">You Choose</div>
+                <div id="computerChoice">Computer Choose</div>
+                <div id ="result" class="success">YOU WIN</div>
+              </div>
+            
             </div>
-
-            <button id="btn-rock">Rock</button>
-            <button id="btn-paper">Paper</button>
-            <button id="btn-scissors">Scissors</button>
-
-        </div>
-        <div class="item">Footer</div>
+          
+          
+          </div>
+          <div class="flex-item right">
+            <div class="right-content">
+             <h1>Rock Paper Scissors</h1>    
+             <div class="emphasis">WITH JS AND FLEXBOX</div>
+             <div class="">View the code and follow me on <a href="#">GitHub</a></div>
+            </div>
+          </div>  
 
     </div>
     
