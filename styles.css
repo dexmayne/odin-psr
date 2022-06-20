@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;900&display=swap');
+
+body{
+  background-color: #ffab00;
+  background-image: linear-gradient(to bottom right, #ffab00, #ff7b00);
+  font-family: Montserrat;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+h1{
+  margin: 0;
+  margin-bottom: 28px;
+}
+
+.content{
+  display: flex;
+  justify-content: space-around;
+  padding: 100px 80px;
+  height: 50vh;
+  flex: 1;
+  
+}
+
+.flex-item{
+  
+  flex: 1;
+}
+
+.emphasis{
+  background-color: #ffffff;
+  padding: 12px;
+  color: #ffab00;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.right{
+  color: white;
+  padding: 24px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+ }
+
+.left{
+  
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 3px 3px 18px rgb(0 0 0 / 0.2);
+}
+
+.left-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.scoreBoard{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.success{
+  background-color: #98ff78;
+  padding: 12px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.failure{
+  background-color: #ee3d3d;
+  color: #fff;
+  padding: 12px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.gameInfo{
+  text-align: center;
+}
+
+#playerChoice, #computerChoice{
+  margin-bottom: 8px;
+}
+
+#btn-rock, #btn-paper, #btn-scissors{
+  height: 100px;
+}
