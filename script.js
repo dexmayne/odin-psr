@@ -57,31 +57,45 @@ btns.forEach((button) => {
         
         //Play a round
         winner = playRound(button.alt, computerPick);
-        console.log(winner);
-        updateScore(winner)
+        updateScore(winner, button.alt, computerPick);
     });
 });
 
+function calculateWinner(){
+    if(playerScore == 5){
+        result.classList.add('success');
+        result.textContent = 'You win the game!';
+        resetGame();
+        
+    }else if(computerScore == 5){
+        result.classList.add('failure');
+        result.textContent = 'You lose the game!';  
+        resetGame();
+    }
+}
 
+function resetGame(){
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreContainer.textContent = `Player: ${playerScore}`;
+    computerScoreContainer.textContent = `Computer: ${computerScore}`;
+}
 
-function updateScore(roundWinner){
+function updateScore(roundWinner, playerChoice, computerChoice){
 
     if(roundWinner === 1){
         playerScore += 1;
         playerScoreContainer.textContent = `Player: ${playerScore}`;
-        result.classList.remove('failure');
-        result.classList.add('success');
-        result.textContent = 'You Win!';
+        result.textContent = `You Win! ${playerChoice} beats ${computerChoice}`;
         
                 
     }else if(roundWinner === 0){
         computerScore += 1;
         computerScoreContainer.textContent = `Computer: ${computerScore}`;
-        result.classList.remove('success');
-        result.classList.add('failure');
-        result.textContent = 'You Lose!';
+        result.textContent = `You Lose! ${computerChoice} beats ${playerChoice}`;
     }else{
-        result.classList.add('tie');  
         result.textContent = 'Tie!';  
     }
+
+    calculateWinner();
 }
