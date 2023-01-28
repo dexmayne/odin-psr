@@ -116,6 +116,8 @@ h1{
 .playButtons{
   justify-content: space-around;
   display: flex;
+  background: #e5e5e5;
+  border-radius: 24px;
 }
 
 #playerChoice, #computerChoice{
