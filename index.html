@@ -18,25 +18,38 @@
     
             <div class="left-content">
             
-              <div class="scoreBoard">
-                <div id="playerScore">Player: 0</div>
-                <div id="computerScore">Computer: 0</div>
-              </div>
-              
-              <div class="playButtons">
-        
-                <img src="rock.svg" id="btn-rock" alt="rock"/>
-                <img src="paper.svg" id='btn-paper' alt="paper"/>
-                <img src="scissors.svg" id='btn-scissors' alt="scissors"/>
+		  
+			  <div class="gameInfo">
+				<div id ="result">Lets play!</div>
+				<p>First to 5 points wins the game</p>
                 
               </div>
+			  
+			  <div class="roundDisplay">
+				<div class="roundbox">
+					<div class="sign bttn" id="playerDisplay">❔</div>
+					<div id="playerScore">Player: 0</div>
+				</div>
+				<div class="roundbox">
+					<div class="sign bttn" id="ComputerDisplay">❔</div>
+					 <div id="computerScore">Computer: 0</div>
+				</div>
+			  
+			  </div>
               
-              <div class="gameInfo">
-                <div id="playerChoice">You choose</div>
-                <div id="computerChoice">Computer choose</div>
-                <div id ="result" class="neutral">Lets play!</div>
+              <div class="playButtons">
+                <div class="buttonbox">
+				           <div class="sign bttn" title="rock" id="btn-rock">✊</div>
+                </div>
+                <div class="buttonbox">
+			            	<div class="sign bttn" title="paper" id='btn-paper'>✋</div>
+                </div>
+                <div class="buttonbox">
+			          	  <div class="sign bttn" title="scissor" id='btn-scissors'>✌</div>
+                </div>
+				                
               </div>
-            
+			  
             </div>
           
           
@@ -47,7 +60,14 @@
              <div class="emphasis">WITH JS AND FLEXBOX</div>
              <div class="">View the code and follow me on <a href="#">GitHub</a></div>
             </div>
-          </div>  
+          </div> 
+
+			  <div id="myModal" class="modal">
+				<div class="modal-content">
+					<p class="modal-title" id="resetGameMssg"></p>
+					<button class="bttn resetBttn" id="resetbutton">Play again</button>
+				</div>
+			  </div>		  
 
     </div>
     
