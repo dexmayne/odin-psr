@@ -19,6 +19,10 @@ h1{
 	display: inline-block;
 }
 
+.sign:hover{
+  transform: scale(1.5);
+}
+
 .content{
   display: flex;
   justify-content: space-around;
